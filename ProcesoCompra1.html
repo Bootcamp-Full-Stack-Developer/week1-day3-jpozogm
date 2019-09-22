@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CheckOutStep1</title>
+</head>
+<body>
+
+    <!--INICIO: BARA DE PASOS-->
+    <nav> 
+            <ul>  
+                <li class="current">01 CUSTOMER INFO</li>  <!--El class current indica que estas ahí, util para meter css y el lector de pantalla-->
+                <li>02 SHIPPING INFO</li>
+                <li>03 PAYMENT SELECTION</li>
+             </ul>        
+        </nav>
+<!--FIN: BARA DE PASOS-->
+
+
+<form id="CheckOut1" action="#" method="GET"> <!--Action: para volcar datos a la dirección que diga, y GET es para el traspaso de datos de una pagina a otra-->
+
+
+
+    <!--INICIO: CUSTOMER INFORMATION-->
+    <div class="customerInformation">
+        <h1>Customer Information</h1>
+
+        <div>
+            <label for="name">FIRST NAME</label>
+            <input type="text" id="name" required> <!--Required lo metemos en aquellos campos que sean obligatorios-->
+        </div>
+          
+        <div>
+            <label for="lastname">LAST NAME</label>
+            <input type="text" id="lastname">
+        </div>
+
+        <div>
+            <label for="address">ADDRESS</label>
+            <input type="text" id="address">
+        </div>
+
+        <div>
+            <label for="country">COUNTRY</label>
+            <select id="country">
+                <option selected="selected">Select your Country</option>
+
+                    <optgroup label="European Countries">
+                        <option value="France">France</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Deuchland">Deuchland</option>
+                        <option value="Spain">Spain</option>
+                    </optgroup>
+
+                    <optgroup label="non-EU countries">
+                        <option value="Russia">Russia</option>
+                         <option value="Norway">Norway</option>
+                        <option value="Turkey">Turkey</option>
+                     </optgroup>
+            </select>
+        </div>
+
+        <div>
+            <label for="city">CITY</label>
+            <input type="text" id="city" autofocus=”true” value="  Vilniu"> <!--INCLUYO UN AUTOFOCO / Value introduce ese texto por defecto en la casilla-->
+
+        </div>
+
+            
+        <div class="post code" action="#">  <!--DUDA: LE METO PHONE PARA QUE APAREZCAN Nºs en el TECLADO. COMO FUNCIONA PATTERN? PORQUE UPEDO METER nº-->
+            <label for="post code">POST CODE</label>
+            <input type="phone" pattern="[0-9]+" tittle="only numbers" maxlength="5"> <!-- Si ponemos placeholder="Search.." aparece eso en la casilla de texto-->
+            <button type=”submit”>FIND</button>  
+        </div>
+
+        <div>
+              <label for="phone">Teléfono</label>
+              <input type"tel" id="phone" > <!--aqui puedes meter pattern para definir que tipo de numeros, cantidad...-->
+        </div>
+    </div>
+</form>
+<!--FIN: CUSTOMER INFORMATION-->
+
+
+<!--INICIO FOOTER-->
+ <footer>
+
+    <a href="#">Return to Shop</a>
+
+    <button form="CheckOut1" type=”submit”>CONTINUE TO SHIPPING</button> <!--DUDA: Pero si este botón hace la acción de enviar hay que quitar la acción del form?-->
+
+ </footer>
+<!--FIN FOOTER-->
+      
+ 
+<!--INICIO COLUMN-->
+ <div class="column">   
+
+    <h1>Shopping Cart</h1>
+
+     <ul>  
+        <li><a href="#">PRODUCT 1</a></li> 
+        <li><a href="#">PRODUCT 2</a></li>
+
+     </ul> 
+
+ 
+     <button class="accordion">Have a voucher?</button>   <!--Boton acordeón-->
+     <div class="panel">
+     <input type="voucher" pattern="[0-9]+" tittle="only numbers" maxlength="5" placeholder="Insert Code..." name="Insert Code"> 
+     <button type=”submit”>Apply</button>  
+     </div>
+
+     
+
+
+
+     <table> 
+        <tbody>
+            <tr>
+                <td><code>subtotal</code></td> 
+                <td class= "price"><a href="#">€ 169.80</a></td> <!--METO UN LINK QUE LLEVA AL PRECIO DEL PRODCUTO-->
+            </tr>
+
+            <tr>
+                <td><code>Shipping</code></td>
+                <td class= "price"><a href="#">Free</a></td> <!--METO UN LINK QUE LLEVA AL PRECIO DE GASTOS DE ENVIO-->
+            </tr>
+            
+            
+            <tr>
+                <td><code>TOTAL</code></td>
+                <td class= "price"><a href="#">€ 169.80</a></td> <!--AQUI IMAGINO QUE METEREMOS UNA FUNCION JS-->
+            </tr>
+        </tbody>
+    </table>    
+
+</div>
+<!--FIN COLUMN-->
+
+</body>
+</html>

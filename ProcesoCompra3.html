@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CheckOutStep1</title>
+</head>
+<body>
+
+    <!--INICIO: BARA DE PASOS-->
+    <nav> 
+            <ul>  
+                <li>01 CUSTOMER INFO</li> 
+                <li>02 SHIPPING INFO</li>
+                <li class="current">03 PAYMENT SELECTION</li>
+             </ul>        
+        </nav>
+    <!--FIN: BARA DE PASOS-->
+
+<!--INICIO: PAYMENT SELECTION-->
+<form id="CheckOut3" action="#" method="GET">
+
+<div class="payment">
+    <h2>Payment Selection</h2>
+
+  
+        <div class="creditCard">
+            <input type="radio" id="r-01" name="payment">
+            <label for="r-01">Credit Card</label>
+
+            <div role="application" aria-labelledby="r-01" aria-describedby="r-01">  <!-- meto un Aria-describedby=”id-->   
+                <p id="r-01">
+                    Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.
+                </p>
+            </div>
+
+            <fieldset> 
+                <legend><span class="hidden">Credit Card</span></legend> <!--luego lo oculto en css-->
+    
+                    <div>
+                      <label for="carNumber">CARD NUMBER</label> 
+                      <input type="tlf" id="carNumber"> <!--Pongo tlf para que aparezcan números en el teclado del movil-->
+                    </div>
+                    
+                    <div>
+                      <label for="nameCard">NAME OF CARD</label>
+                      <input type="text" id="nameCard">
+                    </div>
+
+                    <div>
+                       <label for="expiration">EXPIRY DATE</label> 
+                       <input type="tlf" id="expiration"> <!--Pongo tlf para que aparezcan números en el teclado del movil-->
+                    </div>
+                            
+                    <div>
+                      <label for="code">CVV CODE</label>
+                      <input type="tlf" id="code">
+                            
+                        <!-- ventana modal para CVV CODE-->
+
+                            <!-- Trigger/Open The Modal -->
+                                <button id="myBtn">?</button>
+
+                            <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <p>El Código CVV es un sistema de seguridad anti fraude que intenta verificar que usted esta en posesión de la tarjeta que va a 
+                                            utilizar. Para Visa y Mastercard, existe un código de 3 dígitos impreso sobre la zona destinada para la firma del propietario, 
+                                            en la zona posterior de la tarjeta.</p>
+                                    </div>
+
+                            <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                    </div>
+
+            </fieldset> 
+
+
+
+
+        </div>
+
+        <div class="payPal">
+                <input type="radio" id="r-02" name="payment">
+                <label for="r-02">PayPal</label>
+    
+                <div role="application" aria-labelledby="r-02" aria-describedby="r-02">  <!-- meto un Aria-describedby=”id-->   
+                    <p id="r-02">
+                        You will be redirected to PayPal website to complete your purchase securely.
+                    </p>
+                </div>
+        </div>
+
+</div>
+</form>
+
+<!--INICIO FOOTER-->
+ <footer>
+
+    <a href="#">Return to Customer Info</a>
+
+    <button form="CheckOut1" type=”submit”>COMPLETE ORDER</button> <!--DUDA: Pero si este botón hace la acción de enviar hay que quitar la acción del form?-->
+
+ </footer>
+<!--FIN FOOTER-->
+      
+ 
+<!--INICIO COLUMN-->
+ <div class="column">   
+
+    <h1>Shopping Cart</h1>
+
+     <ul>  
+        <li><a href="#">PRODUCT 1</a></li> 
+        <li><a href="#">PRODUCT 2</a></li>
+
+     </ul> 
+
+ 
+     <button class="accordion">Have a voucher?</button>   <!--Boton acordeón-->
+     <div class="panel">
+     <input type="voucher" pattern="[0-9]+" tittle="only numbers" maxlength="5" placeholder="Insert Code..." name="Insert Code"> 
+     <button type=”submit”>Apply</button>  
+     </div>
+
+     
+
+
+
+     <table> 
+        <tbody>
+            <tr>
+                <td><code>subtotal</code></td> 
+                <td class= "price"><a href="#">€ 169.80</a></td> <!--METO UN LINK QUE LLEVA AL PRECIO DEL PRODCUTO-->
+            </tr>
+
+            <tr>
+                <td><code>Shipping</code></td>
+                <td class= "price"><a href="#">Free</a></td> <!--METO UN LINK QUE LLEVA AL PRECIO DE GASTOS DE ENVIO-->
+            </tr>
+            
+            
+            <tr>
+                <td><code>TOTAL</code></td>
+                <td class= "price"><a href="#">€ 169.80</a></td> <!--AQUI IMAGINO QUE METEREMOS UNA FUNCION JS-->
+            </tr>
+        </tbody>
+    </table>    
+
+</div>
+<!--FIN COLUMN-->
+
+</body>
+</html>
+
+
+
+
